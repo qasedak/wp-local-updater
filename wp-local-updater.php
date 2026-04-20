@@ -369,7 +369,7 @@ class WP_Local_Updater {
 									<?php esc_html_e( 'Upload ZIP file', 'wp-local-updater' ); ?>
 								</label>
 
-								<div id="wlu_file_field">
+								<div id="wlu_file_field" style="display:none;">
 									<input type="file"
 									       name="wlu_zip"
 									       id="wlu_zip"
