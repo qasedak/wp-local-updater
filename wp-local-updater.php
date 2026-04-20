@@ -22,6 +22,7 @@ class WP_Local_Updater {
 	public function __construct() {
 		add_action( 'plugins_loaded', [ $this, 'load_textdomain' ] );
 		add_action( 'admin_menu', [ $this, 'add_menu' ] );
+		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_styles' ] );
 	}
 
 	public function load_textdomain() {
@@ -39,6 +40,26 @@ class WP_Local_Updater {
 			'update_core',
 			'wp-local-updater',
 			[ $this, 'render_page' ]
+		);
+	}
+
+	/**
+	 * Enqueue styles for the plugin admin page.
+	 */
+	public function enqueue_styles( $hook ) {
+		// Only load on our plugin page
+		if ( 'tools_page_wp-local-updater' !== $hook ) {
+			return;
+		}
+
+		$plugin_url = plugin_dir_url( __FILE__ );
+		$css_file   = 'assets/css/wp-local-updater.css';
+
+		wp_enqueue_style(
+			'wp-local-updater',
+			$plugin_url . $css_file,
+			[],
+			filemtime( plugin_dir_path( __FILE__ ) . $css_file )
 		);
 	}
 
@@ -64,7 +85,7 @@ class WP_Local_Updater {
 			/* translators: %s: current post_max_size value */
 			echo sprintf( esc_html__( 'Current limit: %s', 'wp-local-updater' ), '<code dir="ltr">' . esc_html( $limit ) . '</code>' ) . '<br>';
 			echo esc_html__( 'To increase the limit, set the following values in php.ini (or .htaccess):', 'wp-local-updater' );
-			echo '<pre dir="ltr" style="background:#f0f0f0;padding:8px 12px;margin-top:6px;display:inline-block;">';
+		echo '<pre class="wlu-error-limit">';
 			echo "upload_max_filesize = 64M\npost_max_size = 64M\nmax_execution_time = 300";
 			echo '</pre>';
 			echo '</p></div></div>';
@@ -185,7 +206,7 @@ class WP_Local_Updater {
 
 		remove_filter( 'pre_http_request', $block_wporg, 1 );
 
-		echo '<hr style="margin:20px 0;">';
+		echo '<hr class="wlu-divider">';
 
 		if ( is_wp_error( $result ) ) {
 			echo '<div class="notice notice-error"><p>';
@@ -268,18 +289,10 @@ class WP_Local_Updater {
 	private function render_form() {
 		$current_version = get_bloginfo( 'version' );
 		?>
-		<style>
-			.wlu-wrap { max-width: 700px; }
-			.wlu-wrap h1 { font-size: 1.6em; }
-			.wlu-wrap .form-table th { text-align: right; padding-right: 0; }
-			.wlu-wrap .description { font-style: normal; color: #666; }
-		</style>
 
 		<div class="wrap wlu-wrap">
 			<h1><?php esc_html_e( 'WP Local Updater', 'wp-local-updater' ); ?></h1>
-			<p class="description" style="font-size:13px;max-width:680px;">
-				<?php esc_html_e( 'Enter a direct download URL for the new WordPress ZIP, or upload the file. Clicking Update will apply the upgrade immediately.', 'wp-local-updater' ); ?>
-			</p>
+			<p class="description"><?php esc_html_e( 'Enter a direct download URL for the new WordPress ZIP, or upload the file. Clicking Update will apply the upgrade immediately.', 'wp-local-updater' ); ?></p>
 
 			<hr>
 
@@ -290,7 +303,7 @@ class WP_Local_Updater {
 				</tr>
 			</table>
 
-			<h2 style="margin-top:24px;"><?php esc_html_e( 'Update WordPress Core', 'wp-local-updater' ); ?></h2>
+			<h2><?php esc_html_e( 'Update WordPress Core', 'wp-local-updater' ); ?></h2>
 
 			<form method="post" enctype="multipart/form-data">
 				<?php wp_nonce_field( 'wlu_update_action', 'wlu_nonce' ); ?>
@@ -334,7 +347,7 @@ class WP_Local_Updater {
 									<?php esc_html_e( 'Download URL', 'wp-local-updater' ); ?>
 								</label>
 
-								<div id="wlu_url_field" style="margin-top:8px;">
+								<div id="wlu_url_field">
 									<input type="url"
 									       name="wlu_url"
 									       id="wlu_url"
@@ -356,7 +369,7 @@ class WP_Local_Updater {
 									<?php esc_html_e( 'Upload ZIP file', 'wp-local-updater' ); ?>
 								</label>
 
-								<div id="wlu_file_field" style="display:none;margin-top:8px;">
+								<div id="wlu_file_field">
 									<input type="file"
 									       name="wlu_zip"
 									       id="wlu_zip"
@@ -379,44 +392,44 @@ class WP_Local_Updater {
 				<p class="submit">
 					<button type="submit" class="button button-primary button-hero"
 					        onclick="return confirm('<?php echo esc_js( __( 'Are you sure you want to update WordPress? Make sure you have a backup before proceeding.', 'wp-local-updater' ) ); ?>');">
-						<?php esc_html_e( '🔄 Start Update', 'wp-local-updater' ); ?>
+					<span class="dashicons dashicons-update wlu-dashicons"></span><?php esc_html_e( 'Start Update', 'wp-local-updater' ); ?>
 					</button>
 				</p>
 			</form>
 
-			<div style="margin-top:32px;padding:16px;background:#fff8e1;border-right:4px solid #ffb300;border-radius:4px;">
-				<strong><?php esc_html_e( '⚠️ Notice:', 'wp-local-updater' ); ?></strong>
-				<ul style="margin:8px 16px 0;list-style:disc;">
-					<li><?php esc_html_e( 'Always back up your database and files before updating.', 'wp-local-updater' ); ?></li>
-					<li><?php esc_html_e( 'Make sure the ZIP file is the official WordPress release.', 'wp-local-updater' ); ?></li>
-					<li><?php esc_html_e( 'Do not close or refresh the page during the update.', 'wp-local-updater' ); ?></li>
-					<li>
-						<?php esc_html_e( 'Ensure PHP limits are set high enough:', 'wp-local-updater' ); ?>
-						<pre dir="ltr" style="background:#fffde7;padding:6px 10px;margin:4px 0 0;display:inline-block;font-size:12px;">upload_max_filesize = 64M
+		<div class="wlu-notice-box">
+			<strong><span class="dashicons dashicons-warning wlu-dashicons"></span><?php esc_html_e( 'Notice:', 'wp-local-updater' ); ?></strong>
+			<ul>
+				<li><?php esc_html_e( 'Always back up your database and files before updating.', 'wp-local-updater' ); ?></li>
+				<li><?php esc_html_e( 'Make sure the ZIP file is the official WordPress release.', 'wp-local-updater' ); ?></li>
+				<li><?php esc_html_e( 'Do not close or refresh the page during the update.', 'wp-local-updater' ); ?></li>
+				<li>
+					<?php esc_html_e( 'Ensure PHP limits are set high enough:', 'wp-local-updater' ); ?>
+					<pre class="wlu-code-block">upload_max_filesize = 64M
 post_max_size = 64M
 max_execution_time = 300</pre>
+					<?php
+					$pm  = $this->bytes( ini_get( 'post_max_size' ) );
+					$um  = $this->bytes( ini_get( 'upload_max_filesize' ) );
+					$et  = (int) ini_get( 'max_execution_time' );
+					$low = ( $pm < 20 * 1024 * 1024 ) || ( $um < 20 * 1024 * 1024 ) || ( $et > 0 && $et < 120 );
+					if ( $low ) :
+					?>
+					<br><span class="wlu-settings-warning">
 						<?php
-						$pm  = $this->bytes( ini_get( 'post_max_size' ) );
-						$um  = $this->bytes( ini_get( 'upload_max_filesize' ) );
-						$et  = (int) ini_get( 'max_execution_time' );
-						$low = ( $pm < 20 * 1024 * 1024 ) || ( $um < 20 * 1024 * 1024 ) || ( $et > 0 && $et < 120 );
-						if ( $low ) :
+						/* translators: 1: post_max_size value, 2: upload_max_filesize value, 3: max_execution_time in seconds */
+						printf(
+							esc_html__( 'Your current server settings are low: post_max_size=%1$s, upload_max_filesize=%2$s, max_execution_time=%3$ss', 'wp-local-updater' ),
+							esc_html( ini_get( 'post_max_size' ) ),
+							esc_html( ini_get( 'upload_max_filesize' ) ),
+							esc_html( $et )
+						);
 						?>
-						<br><span style="color:#c62828;font-weight:bold;">
-							<?php
-							/* translators: 1: post_max_size value, 2: upload_max_filesize value, 3: max_execution_time in seconds */
-							printf(
-								esc_html__( '⚠ Your current server settings are low: post_max_size=%1$s, upload_max_filesize=%2$s, max_execution_time=%3$ss', 'wp-local-updater' ),
-								esc_html( ini_get( 'post_max_size' ) ),
-								esc_html( ini_get( 'upload_max_filesize' ) ),
-								esc_html( $et )
-							);
-							?>
-						</span>
-						<?php endif; ?>
-					</li>
-				</ul>
-			</div>
+					</span>
+					<?php endif; ?>
+				</li>
+			</ul>
+		</div>
 		</div>
 
 		<script>

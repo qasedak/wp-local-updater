@@ -1,0 +1,114 @@
+/**
+ * WP Local Updater - Main Styles
+ */
+
+/* Main wrapper */
+.wlu-wrap {
+	max-width: 700px;
+}
+
+.wlu-wrap h1 {
+	font-size: 1.6em;
+}
+
+.wlu-wrap .form-table th {
+	padding-inline-end: 0;
+}
+
+/* RTL adjustments */
+:dir(rtl) .wlu-wrap .form-table th {
+	padding-inline-start: 0;
+	padding-inline-end: auto;
+}
+
+.wlu-wrap .description {
+	font-style: normal;
+	color: #666;
+}
+
+/* Page description */
+.wlu-wrap > .description {
+	font-size: 13px;
+	max-width: 680px;
+}
+
+/* Section headings */
+.wlu-wrap h2 {
+	margin-top: 24px;
+}
+
+/* Form field spacing */
+#wlu_url_field {
+	margin-top: 8px;
+}
+
+#wlu_file_field {
+	display: none;
+	margin-top: 8px;
+}
+
+/* Dashicons inline styling */
+.wlu-wrap .dashicons {
+	margin-inline-end: 6px;
+	vertical-align: middle;
+}
+
+.wlu-dashicons {
+	margin-inline-end: 6px;
+	vertical-align: middle;
+}
+
+/* Notice/Alert box */
+.wlu-notice-box {
+	margin-top: 32px;
+	padding: 16px;
+	background: #fff8e1;
+	border-inline-end: 4px solid #ffb300;
+	border-radius: 4px;
+}
+
+/* RTL adjustments for notice box */
+:dir(rtl) .wlu-notice-box {
+	border-inline-end: none;
+	border-inline-start: 4px solid #ffb300;
+}
+
+.wlu-notice-box strong {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.wlu-notice-box ul {
+	margin: 8px 16px 0;
+	list-style: disc;
+}
+
+/* Code blocks */
+.wlu-code-block {
+	background: #fffde7;
+	padding: 6px 10px;
+	margin: 4px 0 0;
+	display: inline-block;
+	font-size: 12px;
+	direction: ltr;
+}
+
+.wlu-error-limit {
+	background: #f0f0f0;
+	padding: 8px 12px;
+	margin-top: 6px;
+	display: inline-block;
+	direction: ltr;
+}
+
+/* Error warning text */
+.wlu-settings-warning {
+	color: #c62828;
+	font-weight: bold;
+}
+
+/* Horizontal rule */
+.wlu-divider {
+	margin: 20px 0;
+}
