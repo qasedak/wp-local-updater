@@ -59,7 +59,7 @@ class WP_Local_Updater {
 			(int) $_SERVER['CONTENT_LENGTH'] > $this->bytes( ini_get( 'post_max_size' ) )
 		) {
 			$limit = ini_get( 'post_max_size' );
-			echo '<div class="wrap"><div class="notice notice-error" style="direction:rtl;text-align:right;"><p>';
+			echo '<div class="wrap"><div class="notice notice-error" ><p>';
 			echo '<strong>' . esc_html__( "Error: Uploaded file exceeds PHP's post_max_size limit.", 'wp-local-updater' ) . '</strong><br>';
 			/* translators: %s: current post_max_size value */
 			echo sprintf( esc_html__( 'Current limit: %s', 'wp-local-updater' ), '<code dir="ltr">' . esc_html( $limit ) . '</code>' ) . '<br>';
@@ -176,7 +176,7 @@ class WP_Local_Updater {
 			],
 		];
 
-		echo '<div class="wrap" style="direction:rtl;text-align:right;">';
+		echo '<div class="wrap" >';
 		echo '<h1>' . esc_html__( 'Updating WordPress…', 'wp-local-updater' ) . '</h1>';
 
 		$skin     = new WP_Upgrader_Skin( [ 'title' => __( 'WordPress Update', 'wp-local-updater' ) ] );
@@ -269,7 +269,7 @@ class WP_Local_Updater {
 		$current_version = get_bloginfo( 'version' );
 		?>
 		<style>
-			.wlu-wrap { direction: rtl; text-align: right; max-width: 700px; }
+			.wlu-wrap { max-width: 700px; }
 			.wlu-wrap h1 { font-size: 1.6em; }
 			.wlu-wrap .form-table th { text-align: right; padding-right: 0; }
 			.wlu-wrap .description { font-style: normal; color: #666; }
