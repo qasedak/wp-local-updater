@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Local Updater 1.0.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-01T00:00:00+00:00\n"
-"PO-Revision-Date: 2026-04-20 20:08+0330\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-local-updater\n"
+"POT-Creation-Date: 2026-04-20T18:11:46+00:00\n"
+"PO-Revision-Date: 2026-04-20 21:47+0330\n"
 "Last-Translator: \n"
 "Language-Team: Persian\n"
 "Language: fa_IR\n"
@@ -14,170 +14,9 @@ msgstr ""
 "X-Generator: Poedit 3.4.2\n"
 
 #. Plugin Name of the plugin
-#: wp-local-updater.php wp-local-updater.php:37 wp-local-updater.php:279
+#: wp-local-updater.php wp-local-updater.php:38 wp-local-updater.php:294
 msgid "WP Local Updater"
 msgstr "بروزرسانی محلی وردپرس"
-
-#: wp-local-updater.php:38
-msgid "Local Updater"
-msgstr "بروزرسانی محلی"
-
-#: wp-local-updater.php:51
-msgid "You do not have permission to access this page."
-msgstr "شما دسترسی لازم را ندارید."
-
-#: wp-local-updater.php:63
-msgid "Error: Uploaded file exceeds PHP's post_max_size limit."
-msgstr "خطا: فایل آپلود شده بزرگ‌تر از حد مجاز PHP است."
-
-#. translators: %s: current post_max_size value
-#: wp-local-updater.php:65
-#, php-format
-msgid "Current limit: %s"
-msgstr "حداکثر مجاز فعلی: %s"
-
-#: wp-local-updater.php:66
-msgid "To increase the limit, set the following values in php.ini (or .htaccess):"
-msgstr "برای افزایش حد مجاز، در فایل php.ini (یا .htaccess) این مقادیر را تنظیم کنید:"
-
-#: wp-local-updater.php:94
-msgid "Invalid version number format."
-msgstr "فرمت شماره نسخه نامعتبر است."
-
-#. translators: %s: error message
-#: wp-local-updater.php:104
-#, php-format
-msgid "File upload failed: %s"
-msgstr "آپلود فایل با خطا مواجه شد: %s"
-
-#: wp-local-updater.php:112
-msgid "Invalid download URL."
-msgstr "لینک دانلود نامعتبر است."
-
-#: wp-local-updater.php:180
-msgid "Updating WordPress…"
-msgstr "در حال بروزرسانی وردپرس…"
-
-#: wp-local-updater.php:182
-msgid "WordPress Update"
-msgstr "بروزرسانی وردپرس"
-
-#. translators: %s: error message
-#: wp-local-updater.php:193
-msgid "Error:"
-msgstr "خطا:"
-
-#: wp-local-updater.php:197
-msgid "Update failed. Review the messages above."
-msgstr "بروزرسانی ناموفق بود. پیام‌های بالا را بررسی کنید."
-
-#: wp-local-updater.php:203
-#, php-format
-msgid "WordPress successfully updated to version %s."
-msgstr "وردپرس با موفقیت به نسخه %s بروزرسانی شد."
-
-#: wp-local-updater.php:214
-msgid "← Back"
-msgstr "→ بازگشت"
-
-#: wp-local-updater.php:228
-msgid "No file received or upload error."
-msgstr "فایلی دریافت نشد یا خطا در آپلود."
-
-#: wp-local-updater.php:234
-msgid "File must have a .zip extension."
-msgstr "فایل باید با پسوند .zip باشد."
-
-#: wp-local-updater.php:239
-msgid "Error reading uploaded file."
-msgstr "خطا در خواندن فایل آپلود شده."
-
-#: wp-local-updater.php:245
-msgid "File is not a valid ZIP archive."
-msgstr "فایل یک آرشیو ZIP معتبر نیست."
-
-#: wp-local-updater.php:252
-msgid "Could not create upload directory."
-msgstr "امکان ایجاد پوشه آپلود وجود ندارد."
-
-#: wp-local-updater.php:259
-msgid "Error saving uploaded file."
-msgstr "خطا در ذخیره فایل آپلود شده."
-
-#: wp-local-updater.php:281
-msgid "Enter a direct download URL for the new WordPress ZIP, or upload the file. Clicking Update will apply the upgrade immediately."
-msgstr "لینک دانلود مستقیم فایل ZIP نسخه جدید وردپرس را وارد کنید یا فایل ZIP را آپلود نمایید. با زدن دکمه بروزرسانی، وردپرس مستقیماً بروزرسانی خواهد شد."
-
-#: wp-local-updater.php:288
-msgid "Current version"
-msgstr "نسخه فعلی"
-
-#: wp-local-updater.php:293
-msgid "Update WordPress Core"
-msgstr "بروزرسانی هسته وردپرس"
-
-#: wp-local-updater.php:302
-msgid "New version number"
-msgstr "شماره نسخه جدید"
-
-#: wp-local-updater.php:309
-msgid "e.g. 6.9.4"
-msgstr "مثلاً ۶.۹.۴"
-
-#: wp-local-updater.php:317
-#, php-format
-msgid "Must be greater than the current version (%s)."
-msgstr "باید بزرگتر از نسخه فعلی (%s) باشد."
-
-#: wp-local-updater.php:325
-msgid "Update source"
-msgstr "منبع بروزرسانی"
-
-#: wp-local-updater.php:334
-msgid "Download URL"
-msgstr "لینک دانلود"
-
-#: wp-local-updater.php:345
-msgid "Enter a direct download link to the WordPress .zip from a local mirror."
-msgstr "لینک مستقیم دانلود فایل .zip وردپرس را از منبع محلی وارد کنید."
-
-#: wp-local-updater.php:356
-msgid "Upload ZIP file"
-msgstr "آپلود فایل ZIP"
-
-#: wp-local-updater.php:368
-#, php-format
-msgid "Upload the wordpress-x.x.x.zip file you downloaded manually. Server limit: %s"
-msgstr "فایل wordpress-x.x.x.zip که دستی دانلود کرده‌اید را آپلود کنید. حداکثر حجم مجاز سرور: %s"
-
-#: wp-local-updater.php:381
-msgid "Are you sure you want to update WordPress? Make sure you have a backup before proceeding."
-msgstr "آیا از بروزرسانی وردپرس اطمینان دارید؟ قبل از ادامه حتماً از سایت خود نسخه پشتیبان تهیه کنید."
-
-#: wp-local-updater.php:382
-msgid "🔄 Start Update"
-msgstr "🔄 شروع بروزرسانی"
-
-#: wp-local-updater.php:388
-msgid "⚠️ Notice:"
-msgstr "⚠️ توجه:"
-
-#: wp-local-updater.php:390
-msgid "Always back up your database and files before updating."
-msgstr "قبل از بروزرسانی حتماً از پایگاه داده و فایل‌های سایت نسخه پشتیبان تهیه کنید."
-
-#: wp-local-updater.php:391
-msgid "Make sure the ZIP file is the official WordPress release."
-msgstr "مطمئن شوید فایل ZIP مربوط به نسخه رسمی وردپرس است."
-
-#: wp-local-updater.php:392
-msgid "Do not close or refresh the page during the update."
-msgstr "در حین بروزرسانی صفحه را نبندید و رفرش نکنید."
-
-#: wp-local-updater.php:409
-#, php-format
-msgid "⚠ Your current server settings are low: post_max_size=%1$s, upload_max_filesize=%2$s, max_execution_time=%3$ss"
-msgstr "⚠ تنظیمات فعلی سرور شما پایین است: post_max_size=%1$s، upload_max_filesize=%2$s، max_execution_time=%3$ss"
 
 #. Plugin URI of the plugin
 #: wp-local-updater.php
@@ -186,14 +25,195 @@ msgstr "https://github.com/qasedak/wp-local-updater"
 
 #. Description of the plugin
 #: wp-local-updater.php
-msgid "Update WordPress core from a direct download URL or uploaded ZIP — for environments with restricted internet access."
+msgid ""
+"Update WordPress core from a direct download URL or uploaded ZIP — for "
+"environments with restricted internet access."
 msgstr "بروزرسانی هسته وردپرس در شرایطی که سرور شما به اینترنت متصل نیست."
-
-#: wp-local-updater.php:394
-msgid "Ensure PHP limits are set high enough:"
-msgstr "توجه داشته باشید که محدودیت های PHP برای انجام عملیات کافی باشند:"
 
 #. Author of the plugin
 #: wp-local-updater.php
 msgid "Mohammad Anbarestany"
 msgstr "محمد عنبرستانی"
+
+#: wp-local-updater.php:39
+msgid "Local Updater"
+msgstr "بروزرسانی محلی"
+
+#: wp-local-updater.php:72
+msgid "You do not have permission to access this page."
+msgstr "شما دسترسی لازم را ندارید."
+
+#: wp-local-updater.php:84
+msgid "Error: Uploaded file exceeds PHP's post_max_size limit."
+msgstr "خطا: فایل آپلود شده بزرگ‌تر از حد مجاز PHP است."
+
+#. translators: %s: current post_max_size value
+#: wp-local-updater.php:86
+#, php-format
+msgid "Current limit: %s"
+msgstr "حداکثر مجاز فعلی: %s"
+
+#: wp-local-updater.php:87
+msgid ""
+"To increase the limit, set the following values in php.ini (or .htaccess):"
+msgstr ""
+"برای افزایش حد مجاز، در فایل php.ini (یا .htaccess) این مقادیر را تنظیم کنید:"
+
+#: wp-local-updater.php:115
+msgid "Invalid version number format."
+msgstr "فرمت شماره نسخه نامعتبر است."
+
+#. translators: %s: error message
+#: wp-local-updater.php:125
+#, php-format
+msgid "File upload failed: %s"
+msgstr "آپلود فایل با خطا مواجه شد: %s"
+
+#: wp-local-updater.php:133
+msgid "Invalid download URL."
+msgstr "لینک دانلود نامعتبر است."
+
+#: wp-local-updater.php:201
+msgid "Updating WordPress…"
+msgstr "در حال بروزرسانی وردپرس…"
+
+#: wp-local-updater.php:203
+msgid "WordPress Update"
+msgstr "بروزرسانی وردپرس"
+
+#. translators: %s: error message
+#: wp-local-updater.php:214
+msgid "Error:"
+msgstr "خطا:"
+
+#: wp-local-updater.php:218
+msgid "Update failed. Review the messages above."
+msgstr "بروزرسانی ناموفق بود. پیام‌های بالا را بررسی کنید."
+
+#: wp-local-updater.php:224
+#, php-format
+msgid "WordPress successfully updated to version %s."
+msgstr "وردپرس با موفقیت به نسخه %s بروزرسانی شد."
+
+#: wp-local-updater.php:235
+msgid "← Back"
+msgstr "→ بازگشت"
+
+#: wp-local-updater.php:249
+msgid "No file received or upload error."
+msgstr "فایلی دریافت نشد یا خطا در آپلود."
+
+#: wp-local-updater.php:255
+msgid "File must have a .zip extension."
+msgstr "فایل باید با پسوند .zip باشد."
+
+#: wp-local-updater.php:260
+msgid "Error reading uploaded file."
+msgstr "خطا در خواندن فایل آپلود شده."
+
+#: wp-local-updater.php:266
+msgid "File is not a valid ZIP archive."
+msgstr "فایل یک آرشیو ZIP معتبر نیست."
+
+#: wp-local-updater.php:273
+msgid "Could not create upload directory."
+msgstr "امکان ایجاد پوشه آپلود وجود ندارد."
+
+#: wp-local-updater.php:280
+msgid "Error saving uploaded file."
+msgstr "خطا در ذخیره فایل آپلود شده."
+
+#: wp-local-updater.php:295
+msgid ""
+"Enter a direct download URL for the new WordPress ZIP, or upload the file. "
+"Clicking Update will apply the upgrade immediately."
+msgstr ""
+"لینک دانلود مستقیم فایل ZIP نسخه جدید وردپرس را وارد کنید یا فایل ZIP را "
+"آپلود نمایید. با زدن دکمه بروزرسانی، وردپرس مستقیماً بروزرسانی خواهد شد."
+
+#: wp-local-updater.php:301
+msgid "Current version"
+msgstr "نسخه فعلی"
+
+#: wp-local-updater.php:306
+msgid "Update WordPress Core"
+msgstr "بروزرسانی هسته وردپرس"
+
+#: wp-local-updater.php:315
+msgid "New version number"
+msgstr "شماره نسخه جدید"
+
+#: wp-local-updater.php:322
+msgid "e.g. 6.9.4"
+msgstr "مثلاً ۶.۹.۴"
+
+#: wp-local-updater.php:330
+#, php-format
+msgid "Must be greater than the current version (%s)."
+msgstr "باید بزرگتر از نسخه فعلی (%s) باشد."
+
+#: wp-local-updater.php:338
+msgid "Update source"
+msgstr "منبع بروزرسانی"
+
+#: wp-local-updater.php:347
+msgid "Download URL"
+msgstr "لینک دانلود"
+
+#: wp-local-updater.php:358
+msgid "Enter a direct download link to the WordPress .zip from a local mirror."
+msgstr "لینک مستقیم دانلود فایل .zip وردپرس را از منبع محلی وارد کنید."
+
+#: wp-local-updater.php:369
+msgid "Upload ZIP file"
+msgstr "آپلود فایل ZIP"
+
+#: wp-local-updater.php:381
+#, php-format
+msgid ""
+"Upload the wordpress-x.x.x.zip file you downloaded manually. Server limit: %s"
+msgstr ""
+"فایل wordpress-x.x.x.zip که دستی دانلود کرده‌اید را آپلود کنید. حداکثر حجم "
+"مجاز سرور: %s"
+
+#: wp-local-updater.php:394
+msgid ""
+"Are you sure you want to update WordPress? Make sure you have a backup "
+"before proceeding."
+msgstr ""
+"آیا از بروزرسانی وردپرس اطمینان دارید؟ قبل از ادامه حتماً از سایت خود نسخه "
+"پشتیبان تهیه کنید."
+
+#: wp-local-updater.php:395
+msgid "Start Update"
+msgstr "شروع بروزرسانی"
+
+#: wp-local-updater.php:401
+msgid "Notice:"
+msgstr "توجه:"
+
+#: wp-local-updater.php:403
+msgid "Always back up your database and files before updating."
+msgstr ""
+"قبل از بروزرسانی حتماً از پایگاه داده و فایل‌های سایت نسخه پشتیبان تهیه کنید."
+
+#: wp-local-updater.php:404
+msgid "Make sure the ZIP file is the official WordPress release."
+msgstr "مطمئن شوید فایل ZIP مربوط به نسخه رسمی وردپرس است."
+
+#: wp-local-updater.php:405
+msgid "Do not close or refresh the page during the update."
+msgstr "در حین بروزرسانی صفحه را نبندید و رفرش نکنید."
+
+#: wp-local-updater.php:407
+msgid "Ensure PHP limits are set high enough:"
+msgstr "توجه داشته باشید که محدودیت های PHP برای انجام عملیات کافی باشند:"
+
+#: wp-local-updater.php:422
+#, php-format
+msgid ""
+"Your current server settings are low: post_max_size=%1$s, "
+"upload_max_filesize=%2$s, max_execution_time=%3$ss"
+msgstr ""
+"تنظیمات فعلی سرور شما پایین است: post_max_size=%1$s، "
+"upload_max_filesize=%2$s، max_execution_time=%3$ss"
