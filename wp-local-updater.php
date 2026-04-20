@@ -4,6 +4,7 @@
  * Plugin URI: https://github.com/qasedak/wp-local-updater
  * Description: Update WordPress core from a direct download URL or uploaded ZIP — for environments with restricted internet access.
  * Version: 1.0.0
+ * Author: Mohammad Anbarestany
  * Requires at least: 5.0
  * Requires PHP: 7.4
  * License: GPL-2.0+
@@ -390,7 +391,7 @@ class WP_Local_Updater {
 					<li><?php esc_html_e( 'Make sure the ZIP file is the official WordPress release.', 'wp-local-updater' ); ?></li>
 					<li><?php esc_html_e( 'Do not close or refresh the page during the update.', 'wp-local-updater' ); ?></li>
 					<li>
-						<?php esc_html_e( 'On localhost, ensure PHP limits are set high enough:', 'wp-local-updater' ); ?>
+						<?php esc_html_e( 'Ensure PHP limits are set high enough:', 'wp-local-updater' ); ?>
 						<pre dir="ltr" style="background:#fffde7;padding:6px 10px;margin:4px 0 0;display:inline-block;font-size:12px;">upload_max_filesize = 64M
 post_max_size = 64M
 max_execution_time = 300</pre>
