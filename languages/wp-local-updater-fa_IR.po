@@ -1,0 +1,143 @@
+# Persian (fa_IR) translation for WP Local Updater
+# Copyright (C) 2024 WP Local Updater
+# License: GPL-2.0+
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Local Updater 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01T00:00:00+00:00\n"
+"PO-Revision-Date: 2024-01-01T00:00:00+00:00\n"
+"Last-Translator: \n"
+"Language-Team: Persian\n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "WP Local Updater"
+msgstr "بروزرسانی محلی وردپرس"
+
+msgid "Local Updater"
+msgstr "بروزرسانی محلی"
+
+msgid "You do not have permission to access this page."
+msgstr "شما دسترسی لازم را ندارید."
+
+msgid "Error: Uploaded file exceeds PHP's post_max_size limit."
+msgstr "خطا: فایل آپلود شده بزرگ‌تر از حد مجاز PHP است."
+
+#. translators: %s: current post_max_size value
+msgid "Current limit: %s"
+msgstr "حداکثر مجاز فعلی: %s"
+
+msgid "To increase the limit, set the following values in php.ini (or .htaccess):"
+msgstr "برای افزایش حد مجاز، در فایل php.ini (یا .htaccess) این مقادیر را تنظیم کنید:"
+
+msgid "Invalid version number format."
+msgstr "فرمت شماره نسخه نامعتبر است."
+
+#. translators: %s: error message
+msgid "File upload failed: %s"
+msgstr "آپلود فایل با خطا مواجه شد: %s"
+
+msgid "Invalid download URL."
+msgstr "لینک دانلود نامعتبر است."
+
+msgid "Updating WordPress…"
+msgstr "در حال بروزرسانی وردپرس…"
+
+msgid "WordPress Update"
+msgstr "بروزرسانی وردپرس"
+
+msgid "Error:"
+msgstr "خطا:"
+
+msgid "Update failed. Review the messages above."
+msgstr "بروزرسانی ناموفق بود. پیام‌های بالا را بررسی کنید."
+
+#. translators: %s: version number
+msgid "WordPress successfully updated to version %s."
+msgstr "وردپرس با موفقیت به نسخه %s بروزرسانی شد."
+
+msgid "← Back"
+msgstr "→ بازگشت"
+
+msgid "No file received or upload error."
+msgstr "فایلی دریافت نشد یا خطا در آپلود."
+
+msgid "File must have a .zip extension."
+msgstr "فایل باید با پسوند .zip باشد."
+
+msgid "Error reading uploaded file."
+msgstr "خطا در خواندن فایل آپلود شده."
+
+msgid "File is not a valid ZIP archive."
+msgstr "فایل یک آرشیو ZIP معتبر نیست."
+
+msgid "Could not create upload directory."
+msgstr "امکان ایجاد پوشه آپلود وجود ندارد."
+
+msgid "Error saving uploaded file."
+msgstr "خطا در ذخیره فایل آپلود شده."
+
+msgid "Enter a direct download URL for the new WordPress ZIP, or upload the file. Clicking Update will apply the upgrade immediately."
+msgstr "لینک دانلود مستقیم فایل ZIP نسخه جدید وردپرس را وارد کنید یا فایل ZIP را آپلود نمایید. با زدن دکمه بروزرسانی، وردپرس مستقیماً بروزرسانی خواهد شد."
+
+msgid "Current version"
+msgstr "نسخه فعلی"
+
+msgid "Update WordPress Core"
+msgstr "بروزرسانی هسته وردپرس"
+
+msgid "New version number"
+msgstr "شماره نسخه جدید"
+
+msgid "e.g. 6.9.4"
+msgstr "مثلاً ۶.۹.۴"
+
+#. translators: %s: current WordPress version number
+msgid "Must be greater than the current version (%s)."
+msgstr "باید بزرگتر از نسخه فعلی (%s) باشد."
+
+msgid "Update source"
+msgstr "منبع بروزرسانی"
+
+msgid "Download URL"
+msgstr "لینک دانلود"
+
+msgid "Enter a direct download link to the WordPress .zip from a local mirror."
+msgstr "لینک مستقیم دانلود فایل .zip وردپرس را از منبع محلی وارد کنید."
+
+msgid "Upload ZIP file"
+msgstr "آپلود فایل ZIP"
+
+#. translators: %s: server upload size limit
+msgid "Upload the wordpress-x.x.x.zip file you downloaded manually. Server limit: %s"
+msgstr "فایل wordpress-x.x.x.zip که دستی دانلود کرده‌اید را آپلود کنید. حداکثر حجم مجاز سرور: %s"
+
+msgid "Are you sure you want to update WordPress? Make sure you have a backup before proceeding."
+msgstr "آیا از بروزرسانی وردپرس اطمینان دارید؟ قبل از ادامه حتماً از سایت خود نسخه پشتیبان تهیه کنید."
+
+msgid "🔄 Start Update"
+msgstr "🔄 شروع بروزرسانی"
+
+msgid "⚠️ Notice:"
+msgstr "⚠️ توجه:"
+
+msgid "Always back up your database and files before updating."
+msgstr "قبل از بروزرسانی حتماً از پایگاه داده و فایل‌های سایت نسخه پشتیبان تهیه کنید."
+
+msgid "Make sure the ZIP file is the official WordPress release."
+msgstr "مطمئن شوید فایل ZIP مربوط به نسخه رسمی وردپرس است."
+
+msgid "Do not close or refresh the page during the update."
+msgstr "در حین بروزرسانی صفحه را نبندید و رفرش نکنید."
+
+msgid "On localhost, ensure PHP limits are set high enough:"
+msgstr "در محیط لوکال (localhost) اطمینان حاصل کنید که محدودیت‌های PHP کافی باشند:"
+
+#. translators: 1: post_max_size value, 2: upload_max_filesize value, 3: max_execution_time in seconds
+msgid "⚠ Your current server settings are low: post_max_size=%1$s, upload_max_filesize=%2$s, max_execution_time=%3$ss"
+msgstr "⚠ تنظیمات فعلی سرور شما پایین است: post_max_size=%1$s، upload_max_filesize=%2$s، max_execution_time=%3$ss"
